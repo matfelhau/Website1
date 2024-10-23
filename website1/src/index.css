@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .font-outline-1 {
+        -webkit-text-stroke: 1px white;
+        color: transparent;
+    }
+}
