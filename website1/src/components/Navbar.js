@@ -37,7 +37,7 @@ const TopNav = () => {
           {/* Input field */}
           <input
             type="text"
-            placeholder="Søk..."
+            placeholder="Search..."
             className="w-full bg-transparent pl-9 pr-4 focus:outline-none xl:w-125"
           />
         </div>

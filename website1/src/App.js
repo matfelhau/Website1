@@ -1,18 +1,33 @@
 import React from 'react';
-import Sidebar from './Sidebar';
-import TopNav from './Navbar';
-import Dashboard from './Dashboard';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Dashboard from './components/Dashboard';
+import Playground from './components/Playground';
+import Typography from './components/Typography';
+import Buttons from './components/Buttons';
+import Alert from './components/Alert';
+import Input from './components/Input';
 
-function App() {
+const App = () => {
   return (
-    <div className="flex min-h-screen bg-black">
-      <Sidebar />
-      <div className="flex-1 flex flex-col">
-        <TopNav />
-        <Dashboard />
+    <Router>
+      <div className="flex">
+        {/* Sidebar is common across both routes */}
+        <Sidebar />
+
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/playground" element={<Playground />} />
+            <Route path="/playground/buttons" element={<Buttons />} />
+            <Route path="/playground/typography" element={<Typography />} />
+            <Route path="/playground/alerts" element={<Alert />} />
+            <Route path="/playground/inputs" element={<Input />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </Router>
   );
-}
+};
 
 export default App;
